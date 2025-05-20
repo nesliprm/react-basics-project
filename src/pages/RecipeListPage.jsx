@@ -9,7 +9,13 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
   return (
     <Box>
       <Hero />
-      <SimpleGrid minChildWidth="320px" spacing={5}>
+
+      <SimpleGrid
+        columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+        spacing={6}
+        p={5}
+        justifyItems="center"
+      >
         {recipes.map((recipe) => (
           <RecipeItemCard
             recipe={recipe}

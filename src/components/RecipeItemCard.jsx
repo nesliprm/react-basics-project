@@ -30,7 +30,8 @@ export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
 
   return (
     <Card
-      width="320px"
+      w="100%"
+      maxW="320px"
       onClick={() => setSelectedRecipe(recipe)}
       cursor={"pointer"}
     >
@@ -47,15 +48,24 @@ export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
         </Heading>
       </CardHeader>
       <CardBody>
-        <Box>
+        <Box mt={2}>
+          <Text>
+            Meal: {mealType[0].charAt(0).toUpperCase() + mealType[0].slice(1)}
+          </Text>
+          <Text>
+            Course: {dishType[0].charAt(0).toUpperCase() + dishType[0].slice(1)}
+          </Text>
+        </Box>
+
+        <Box mt={2}>
           <Text>Diet:</Text>
           <Box>
             {dietLabels.map((label, index) => (
-              <Tag key={index}>{label}</Tag>
+              <Text key={index}>{label}</Text>
             ))}
           </Box>
         </Box>
-        <Box>
+        <Box mt={2}>
           <Text>Contains: </Text>
           <Box>
             {cautions.map((label, index) => (
@@ -63,13 +73,6 @@ export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
             ))}
           </Box>
         </Box>
-
-        <Text>
-          Meal: {mealType[0].charAt(0).toUpperCase() + mealType[0].slice(1)}
-        </Text>
-        <Text>
-          Course: {dishType[0].charAt(0).toUpperCase() + dishType[0].slice(1)}
-        </Text>
       </CardBody>
       <CardFooter>
         <Wrap>

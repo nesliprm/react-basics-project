@@ -1,12 +1,13 @@
 import { SearchBar } from "./SearchBar";
 import { Box } from "@chakra-ui/react";
 import { MainHeader } from "./MainHeader";
-import heroImage from "../assets/hero-image-01.jpg";
+import heroImage from "../assets/hero-image-02-v2.png";
 
 export const Hero = () => {
   return (
     <Box
-      pb={8}
+      mb={10}
+      p={8}
       backgroundImage={heroImage}
       backgroundSize="cover"
       backgroundPosition="center"
@@ -16,7 +17,6 @@ export const Hero = () => {
       flexDirection="column"
     >
       <MainHeader />
-
       <SearchBar />
     </Box>
   );

@@ -1,4 +1,4 @@
-import { Heading, Box, Icon } from "@chakra-ui/react";
+import { Heading, Box, Icon, Link, HStack } from "@chakra-ui/react";
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from "react-icons/fa";
 
 export const MainHeader = () => {
@@ -12,12 +12,21 @@ export const MainHeader = () => {
       <Heading fontSize="5xl" fontWeight="bold">
         Daily Recipes
       </Heading>
-      <Box mt={6}>
-        <Icon as={FaInstagram} boxSize={4} />
-        <Icon as={FaFacebook} boxSize={4} />
-        <Icon as={FaTwitter} boxSize={4} />
-        <Icon as={FaTiktok} boxSize={4} />
-      </Box>
+      <HStack>
+        <Link fontSize={12}>Contact us!</Link>
+        <Link>
+          <Icon as={FaInstagram} boxSize={4} />
+        </Link>
+        <Link>
+          <Icon as={FaFacebook} boxSize={4} />
+        </Link>
+        <Link>
+          <Icon as={FaTwitter} boxSize={4} />
+        </Link>
+        <Link>
+          <Icon as={FaTiktok} boxSize={4} />
+        </Link>
+      </HStack>
     </Box>
   );
 };

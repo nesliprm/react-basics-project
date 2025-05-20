@@ -9,6 +9,8 @@ import {
   Tag,
   TagLabel,
 } from "@chakra-ui/react";
+import { MainHeader } from "../components/MainHeader";
+import HeaderBackground from "../assets/header-background.png";
 
 export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
   const energy = recipe.totalNutrients.ENERC_KCAL;
@@ -20,11 +22,15 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
 
   return (
     <>
-      <Heading>
-        <Text fontSize="5xl" fontWeight="bold" bg={"blue.100"} py={5}>
-          Daily Recipes
-        </Text>
-      </Heading>
+      <Box
+        p={8}
+        backgroundImage={HeaderBackground}
+        backgroundSize="cover"
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+      >
+        <MainHeader />
+      </Box>
 
       <Box py={10} px={20}>
         <Box display="flex" flexDirection="row" gap={10}>

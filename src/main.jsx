@@ -1,12 +1,16 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { App } from './App';
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const theme = extendTheme({
+  fonts: { heading: "Playfair Display", body: "Inter" },
+});
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

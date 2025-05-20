@@ -1,16 +1,26 @@
-import { Center } from "@chakra-ui/react";
-// import { data } from "../utils/data";
+import { Box } from "@chakra-ui/react";
+import { data } from "../utils/data";
 import { Hero } from "../components/Hero";
-import { RecipeCard } from "../components/RecipeCard";
+import { RecipeItemCard } from "../components/RecipeItemCard";
 
 export const RecipeListPage = () => {
-  // You can play around with the console log, but ultimately remove it once you are done
-  // console.log(data.hits[0].recipe.label);
+  const item = data.hits[3].recipe;
 
   return (
-    <Center h="100vh" flexDir="column">
+    <Box>
       <Hero />
-      <RecipeCard />
-    </Center>
+      <RecipeItemCard
+        label={item.label}
+        image={item.image}
+        dietLabels={item.dietLabels}
+        cautions={item.cautions}
+        mealType={
+          item.mealType[0].charAt(0).toUpperCase() + item.mealType[0].slice(1)
+        }
+        dishType={
+          item.dishType[0].charAt(0).toUpperCase() + item.dishType[0].slice(1)
+        }
+      />
+    </Box>
   );
 };

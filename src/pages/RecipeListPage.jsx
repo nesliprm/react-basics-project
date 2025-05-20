@@ -4,7 +4,7 @@ import { Hero } from "../components/Hero";
 import { RecipeItemCard } from "../components/RecipeItemCard";
 
 export const RecipeListPage = ({ setSelectedRecipe }) => {
-  const recipes = data.hits;
+  const recipes = data.hits.map((hit) => hit.recipe);
 
   return (
     <Box>
@@ -13,19 +13,14 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
         {recipes.map((recipe) => (
           <RecipeItemCard
             recipe={recipe}
-            key={recipe.id}
+            key={recipe.uri}
             label={recipe.label}
             image={recipe.image}
             dietLabels={recipe.dietLabels}
             cautions={recipe.cautions}
-            mealType={
-              recipe.mealType[0].charAt(0).toUpperCase() +
-              recipe.mealType[0].slice(1)
-            }
-            dishType={
-              recipe.dishType[0].charAt(0).toUpperCase() +
-              recipe.dishType[0].slice(1)
-            }
+            mealType={recipe.mealType}
+            dishType={recipe.dishType}
+            healthLabels={recipe.healthLabels}
             setSelectedRecipe={setSelectedRecipe}
           />
         ))}

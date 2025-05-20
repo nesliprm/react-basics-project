@@ -9,23 +9,29 @@ import {
   Tag,
   TagLabel,
   Wrap,
+  Box,
 } from "@chakra-ui/react";
 
-export const RecipeItemCard = ({
-  label,
-  image,
-  dietLabels,
-  healthLabels,
-  cautions,
-  mealType,
-  dishType,
-  item,
-  setSelectedItem,
-}) => {
+export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
+  const {
+    label,
+    image,
+    dietLabels = [],
+    cautions = [],
+    mealType = [],
+    dishType = [],
+    healthLabels = [],
+  } = recipe;
+
+  const filteredLabels = healthLabels.filter(
+    (label) =>
+      label === "Vegetarian" || label === "Vegan" || label === "Pescatarian"
+  );
+
   return (
     <Card
       width="320px"
-      onClick={() => setSelectedItem(item)}
+      onClick={() => setSelectedRecipe(recipe)}
       cursor={"pointer"}
     >
       <CardHeader>
@@ -41,14 +47,33 @@ export const RecipeItemCard = ({
         </Heading>
       </CardHeader>
       <CardBody>
-        <Text>Diet: {dietLabels}</Text>
-        <Text>Contains: {cautions}</Text>
-        <Text>Meal: {mealType}</Text>
-        <Text>Course: {dishType}</Text>
+        <Box>
+          <Text>Diet:</Text>
+          <Box>
+            {dietLabels.map((label, index) => (
+              <Tag key={index}>{label}</Tag>
+            ))}
+          </Box>
+        </Box>
+        <Box>
+          <Text>Contains: </Text>
+          <Box>
+            {cautions.map((label, index) => (
+              <Text key={index}>{label}</Text>
+            ))}
+          </Box>
+        </Box>
+
+        <Text>
+          Meal: {mealType[0].charAt(0).toUpperCase() + mealType[0].slice(1)}
+        </Text>
+        <Text>
+          Course: {dishType[0].charAt(0).toUpperCase() + dishType[0].slice(1)}
+        </Text>
       </CardBody>
       <CardFooter>
         <Wrap>
-          {healthLabels.map((label, index) => (
+          {filteredLabels.map((label, index) => (
             <Tag
               key={index}
               size={"sm"}

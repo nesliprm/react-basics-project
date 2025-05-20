@@ -1,8 +1,8 @@
 import { Button } from "@chakra-ui/react";
 
-export const RecipeItemPage = ({ setSelectedItem }) => {
+export const RecipeItemPage = ({ setSelectedRecipe }) => {
   return (
-    <Button mt={5} onClick={() => setSelectedItem(null)}>
+    <Button mt={5} onClick={() => setSelectedRecipe(null)}>
       Back to recipes
     </Button>
   );

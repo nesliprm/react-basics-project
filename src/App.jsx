@@ -5,14 +5,15 @@ import { useState } from "react";
 
 export const App = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+
   return (
-    <Box>
+    <Box className="App">
       {!selectedRecipe ? (
         <RecipeListPage setSelectedRecipe={setSelectedRecipe} />
       ) : (
         <RecipeItemPage
-          item={selectedRecipe}
-          setSelectedItem={setSelectedRecipe}
+          recipe={selectedRecipe}
+          setSelectedRecipe={setSelectedRecipe}
         />
       )}
     </Box>

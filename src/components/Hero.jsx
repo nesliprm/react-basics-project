@@ -1,15 +1,22 @@
 import { SearchBar } from "./SearchBar";
-import { Box, Text, Heading, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { MainHeader } from "./MainHeader";
+import heroImage from "../assets/hero-image-01.jpg";
 
 export const Hero = () => {
   return (
-    <Box pb={8}>
-      <Heading>
-        <Text fontSize="5xl" fontWeight="bold" bg={"blue.100"} py={5}>
-          Daily Recipes
-        </Text>
-      </Heading>
-      <Image src="#" />
+    <Box
+      pb={8}
+      backgroundImage={heroImage}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      height={{ base: "300px", md: "400px" }}
+      display="flex"
+      flexDirection="column"
+    >
+      <MainHeader />
+
       <SearchBar />
     </Box>
   );

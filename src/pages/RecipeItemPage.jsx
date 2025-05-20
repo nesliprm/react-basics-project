@@ -9,6 +9,13 @@ import {
 } from "@chakra-ui/react";
 
 export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
+  const energy = recipe.totalNutrients.ENERC_KCAL;
+  const protein = recipe.totalNutrients.PROCNT;
+  const fat = recipe.totalNutrients.FAT;
+  const carbs = recipe.totalNutrients.CHOCDF;
+  const cholesterol = recipe.totalNutrients.CHOLE;
+  const sodium = recipe.totalNutrients.NA;
+
   return (
     <Box>
       <Box display="flex" flexDirection="row">
@@ -28,7 +35,7 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
           objectFit="cover"
         ></Image>
       </Box>
-      <Box>
+      <Box className="ingredients" mt={10}>
         <Text fontWeight={800} ml={3}>
           Ingredients
         </Text>
@@ -37,6 +44,26 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
             <ListItem key={index}>- {ingredient}</ListItem>
           ))}
         </UnorderedList>
+      </Box>
+      <Box className="nutrients" mt={10}>
+        <Text>
+          Energy: {Math.round(energy.quantity)} {energy.unit}
+        </Text>
+        <Text>
+          Protein: {Math.round(protein.quantity)} {protein.unit}
+        </Text>
+        <Text>
+          Fat: {Math.round(fat.quantity)} {fat.unit}
+        </Text>
+        <Text>
+          Carbs: {Math.round(carbs.quantity)} {carbs.unit}
+        </Text>
+        <Text>
+          Cholesterol: {Math.round(cholesterol.quantity)} {cholesterol.unit}
+        </Text>
+        <Text>
+          Sodium: {Math.round(sodium.quantity)} {sodium.unit}
+        </Text>
       </Box>
 
       <Button mt={5} onClick={() => setSelectedRecipe(null)}>

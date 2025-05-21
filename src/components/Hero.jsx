@@ -3,7 +3,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { MainHeader } from "./MainHeader";
 import heroImage from "../assets/hero-image-02-v2.png";
 
-export const Hero = () => {
+export const Hero = ({ userInput, setUserInput }) => {
   return (
     <Box
       mb={10}
@@ -27,6 +27,8 @@ export const Hero = () => {
             placeholder="Search recipes"
             borderRadius="2xl"
             bg="white"
+            value={userInput}
+            onChange={(event) => setUserInput(event.target.value)}
           />
         </InputGroup>
       </Box>

@@ -1,6 +1,7 @@
-import { Box, SimpleGrid, Center, Button } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { Hero } from "../components/Hero";
+import { Footer } from "../components/Footer";
 import { RecipeItemCard } from "../components/RecipeItemCard";
 import { FilterTags } from "../components/FilterTags";
 import { useState } from "react";
@@ -56,11 +57,7 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
           </Box>
         )}
       </SimpleGrid>
-      <Center>
-        <Button mb={5} onClick={() => setSelectedRecipe(null)}>
-          Back to recipes
-        </Button>
-      </Center>
+      <Footer />
     </Box>
   );
 };

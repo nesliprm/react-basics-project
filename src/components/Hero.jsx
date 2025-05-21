@@ -33,6 +33,7 @@ export const Hero = ({ userInput, setUserInput }) => {
             placeholder="Search recipes"
             borderRadius="2xl"
             bg="white"
+            focusBorderColor="orange.400"
             value={userInput}
             onChange={(event) => setUserInput(event.target.value)}
           />

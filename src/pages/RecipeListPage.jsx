@@ -1,4 +1,4 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid, Center, Button } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { Hero } from "../components/Hero";
 import { RecipeItemCard } from "../components/RecipeItemCard";
@@ -30,7 +30,7 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
       <FilterTags filter={filter} setFilter={setFilter} />
 
       <SimpleGrid
-        columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+        columns={{ base: 1, sm: 2, md: 3, lg: 5 }}
         spacing={6}
         p={5}
         justifyItems="center"
@@ -56,6 +56,11 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
           </Box>
         )}
       </SimpleGrid>
+      <Center>
+        <Button mb={5} onClick={() => setSelectedRecipe(null)}>
+          Back to recipes
+        </Button>
+      </Center>
     </Box>
   );
 };

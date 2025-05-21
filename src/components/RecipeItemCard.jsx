@@ -30,6 +30,7 @@ export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
 
   return (
     <Card
+      borderRadius={30}
       w="100%"
       maxW="320px"
       onClick={() => setSelectedRecipe(recipe)}
@@ -39,15 +40,15 @@ export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
         <Image
           boxSize="300px"
           objectFit="cover"
-          borderRadius={10}
+          borderRadius={20}
           src={image}
           alt={label}
         />
-        <Heading size="lg" mt={2}>
+        <Heading size="md" mt={2}>
           {label}
         </Heading>
       </CardHeader>
-      <CardBody>
+      <CardBody fontSize="sm">
         <Box mt={2}>
           <Text>
             Meal: {mealType[0].charAt(0).toUpperCase() + mealType[0].slice(1)}
@@ -58,18 +59,16 @@ export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
         </Box>
 
         <Box mt={2}>
-          <Text>Diet:</Text>
           <Box>
             {dietLabels.map((label, index) => (
-              <Text key={index}>{label}</Text>
+              <Text key={index}>Diet: {label}</Text>
             ))}
           </Box>
         </Box>
         <Box mt={2}>
-          <Text>Contains: </Text>
           <Box>
             {cautions.map((label, index) => (
-              <Text key={index}>{label}</Text>
+              <Text key={index}>Contains: {label}</Text>
             ))}
           </Box>
         </Box>

@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { App } from "./App";
 
 const theme = extendTheme({
-  fonts: { heading: "Playfair Display", body: "Inter" },
+  fonts: { heading: "Lora", body: "Manrope" },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -4,7 +4,7 @@ export const FilterTags = ({ filter, setFilter }) => {
   const tags = ["Vegan", "Vegetarian", "Pescatarian"];
 
   return (
-    <Center>
+    <Center mb={5}>
       <Wrap>
         {tags.map((tag, index) => (
           <Tag

@@ -1,4 +1,10 @@
-import { Box, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Text,
+} from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MainHeader } from "./MainHeader";
 import heroImage from "../assets/hero-image-02-v2.png";
@@ -32,6 +38,9 @@ export const Hero = ({ userInput, setUserInput }) => {
           />
         </InputGroup>
       </Box>
+      <Text ml={20} mt={1} fontSize="sm">
+        Type a recipe name or dietary tag to get started.
+      </Text>
     </Box>
   );
 };

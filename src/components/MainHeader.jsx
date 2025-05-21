@@ -1,4 +1,4 @@
-import { Heading, Box, Icon, Link, HStack } from "@chakra-ui/react";
+import { Heading, Box, Icon, Link, HStack, Text } from "@chakra-ui/react";
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from "react-icons/fa";
 
 export const MainHeader = ({ setSelectedRecipe }) => {
@@ -9,15 +9,22 @@ export const MainHeader = ({ setSelectedRecipe }) => {
       justifyContent="space-between"
       gap={5}
     >
-      <Heading
-        fontSize="5xl"
-        fontWeight="bold"
-        cursor="pointer"
-        onClick={() => setSelectedRecipe(null)}
-      >
-        Clean Plate
-      </Heading>
       <HStack>
+        <Heading
+          fontFamily="Lobster"
+          fontSize="7xl"
+          fontWeight="bold"
+          cursor="pointer"
+          onClick={() => setSelectedRecipe(null)}
+        >
+          Clean Plate
+        </Heading>
+        <Text pl={3} pt={5}>
+          Recipe inspiration for your next clean plate.
+        </Text>
+      </HStack>
+
+      <HStack pt={6}>
         <Link fontSize={12}>Contact us!</Link>
         <Link>
           <Icon as={FaInstagram} boxSize={4} />

@@ -35,7 +35,7 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
 
       <Box
         my={10}
-        mx={20}
+        mx={{ base: 4, sm: 10, md: 20, xl: 60 }}
         border="dashed 1px"
         borderColor={"blackAlpha.300"}
         borderRadius={30}
@@ -50,17 +50,27 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
           <Heading m={10}>
             <Text>{recipe.label}</Text>
             <Text fontSize={20} mt={10}>
-              For: {recipe.mealType}
+              For:{" "}
+              {recipe.mealType[0].charAt(0).toUpperCase() +
+                recipe.mealType[0].slice(1)}
             </Text>
-            <Text fontSize={20}>Course: {recipe.dishType}</Text>
-            <Text fontSize={20}>Cooking time: {recipe.totalTime} mins</Text>
+            <Text fontSize={20}>
+              Course:{" "}
+              {recipe.dishType[0].charAt(0).toUpperCase() +
+                recipe.dishType[0].slice(1)}
+            </Text>
+            {recipe.totalTime === 0 ? (
+              ""
+            ) : (
+              <Text fontSize={20}>Cooking time: {recipe.totalTime} mins</Text>
+            )}
             <Text fontSize={20}>Servings: {recipe.yield}</Text>
           </Heading>
           <Image
             src={recipe.image}
             alt={recipe.label}
             maxW={{ base: "100%", md: "50%" }}
-            maxH="400px"
+            maxH="600px"
             objectFit="cover"
             borderTopRightRadius={30}
             borderBottomLeftRadius={100}

@@ -15,7 +15,7 @@ export const MainHeader = ({ setSelectedRecipe }) => {
         cursor="pointer"
         onClick={() => setSelectedRecipe(null)}
       >
-        Daily Recipes
+        Clean Plate
       </Heading>
       <HStack>
         <Link fontSize={12}>Contact us!</Link>

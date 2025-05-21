@@ -1,7 +1,7 @@
 import { Heading, Box, Icon, Link, HStack } from "@chakra-ui/react";
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from "react-icons/fa";
 
-export const MainHeader = () => {
+export const MainHeader = ({ setSelectedRecipe }) => {
   return (
     <Box
       display="flex"
@@ -9,7 +9,12 @@ export const MainHeader = () => {
       justifyContent="space-between"
       gap={5}
     >
-      <Heading fontSize="5xl" fontWeight="bold">
+      <Heading
+        fontSize="5xl"
+        fontWeight="bold"
+        cursor="pointer"
+        onClick={() => setSelectedRecipe(null)}
+      >
         Daily Recipes
       </Heading>
       <HStack>

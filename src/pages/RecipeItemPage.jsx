@@ -8,6 +8,7 @@ import {
   UnorderedList,
   Tag,
   TagLabel,
+  Center,
 } from "@chakra-ui/react";
 import { MainHeader } from "../components/MainHeader";
 import HeaderBackground from "../assets/header-background.png";
@@ -29,12 +30,24 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
       >
-        <MainHeader />
+        <MainHeader setSelectedRecipe={setSelectedRecipe} />
       </Box>
 
-      <Box py={10} px={20}>
-        <Box display="flex" flexDirection="row" gap={10}>
-          <Heading>
+      <Box
+        my={10}
+        mx={20}
+        border="dashed 1px"
+        borderColor={"blackAlpha.300"}
+        borderRadius={30}
+        boxShadow="md"
+      >
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-between"
+          gap={10}
+        >
+          <Heading m={10}>
             <Text>{recipe.label}</Text>
             <Text fontSize={20} mt={10}>
               For: {recipe.mealType}
@@ -46,11 +59,14 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
           <Image
             src={recipe.image}
             alt={recipe.label}
-            maxWidth="50%"
+            maxW={{ base: "100%", md: "50%" }}
+            maxH="400px"
             objectFit="cover"
+            borderTopRightRadius={30}
+            borderBottomLeftRadius={100}
           />
         </Box>
-        <Box className="ingredients" mt={10}>
+        <Box className="ingredients" m={10}>
           <Text fontWeight={800} ml={3}>
             Ingredients
           </Text>
@@ -61,7 +77,7 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
           </UnorderedList>
         </Box>
 
-        <Box mt={10} display="flex" flexDirection="row" gap={10}>
+        <Box m={10} display="flex" flexDirection="row" gap={10}>
           <Box className="nutrients">
             <Text>
               Energy: {Math.round(energy.quantity)} {energy.unit}
@@ -96,7 +112,7 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
             ))}
           </Box>
         </Box>
-        <Box className="tags" mt={10}>
+        <Box className="tags" m={10}>
           {recipe.healthLabels.map((label, index) => (
             <Tag
               key={index}
@@ -108,11 +124,12 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
             </Tag>
           ))}
         </Box>
-
-        <Button mt={5} onClick={() => setSelectedRecipe(null)}>
+      </Box>
+      <Center>
+        <Button mb={5} onClick={() => setSelectedRecipe(null)}>
           Back to recipes
         </Button>
-      </Box>
+      </Center>
     </>
   );
 };

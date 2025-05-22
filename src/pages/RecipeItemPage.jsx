@@ -109,17 +109,29 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
             </Text>
           </Box>
           <Box className="diet">
-            <Text>Suitable for: </Text>
-            {recipe.dietLabels.map((label, index) => (
-              <Text key={index}>{label}</Text>
-            ))}
+            {recipe.dietLabels.length > 0 ? (
+              <>
+                <Text>Suitable for: </Text>
+                {recipe.dietLabels.map((label, index) => (
+                  <Text key={index}>{label}</Text>
+                ))}
+              </>
+            ) : (
+              ""
+            )}
           </Box>
 
           <Box className="cautions">
-            <Text>Contains: </Text>
-            {recipe.cautions.map((label, index) => (
-              <Text key={index}>{label}</Text>
-            ))}
+            {recipe.cautions.length > 0 ? (
+              <>
+                <Text>Contains: </Text>
+                {recipe.cautions.map((label, index) => (
+                  <Text key={index}>{label}</Text>
+                ))}
+              </>
+            ) : (
+              ""
+            )}
           </Box>
         </Box>
         <Box className="tags" m={10}>

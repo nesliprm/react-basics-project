@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <Box as="footer" py={4} mt={10}>
       <Center>
-        <Text fontFamily="Lora" fontSize="xs" color="gray.600">
+        <Text fontFamily="monospace" fontSize="xs" color="gray.600">
           built by{" "}
           <Link
             href="https://github.com/nesliprm"

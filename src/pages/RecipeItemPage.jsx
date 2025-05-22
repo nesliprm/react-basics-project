@@ -22,7 +22,7 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
   const sodium = recipe.totalNutrients.NA;
 
   return (
-    <>
+    <Box>
       <Box
         p={8}
         backgroundImage={HeaderBackground}
@@ -140,6 +140,6 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
           Back to recipes
         </Button>
       </Center>
-    </>
+    </Box>
   );
 };

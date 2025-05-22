@@ -1,7 +1,6 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { Hero } from "../components/Hero";
-import { Footer } from "../components/Footer";
 import { ScrollTopButton } from "../components/ui/ScrollTopButton";
 import { RecipeItemCard } from "../components/RecipeItemCard";
 import { FilterTags } from "../components/FilterTags";
@@ -59,7 +58,6 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
         )}
       </SimpleGrid>
       <ScrollTopButton />
-      <Footer />
     </Box>
   );
 };

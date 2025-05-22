@@ -7,7 +7,7 @@ export const MainHeader = ({ setSelectedRecipe }) => {
       display="flex"
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
-      alignItems={{ base: "center", md: "flex-start" }}
+      alignItems={{ base: "center", md: "left" }}
       textAlign={{ base: "center", md: "left" }}
       gap={5}
     >
@@ -33,7 +33,7 @@ export const MainHeader = ({ setSelectedRecipe }) => {
         </Link>
       </HStack>
 
-      <HStack>
+      <HStack spacing={4}>
         <Heading
           fontFamily="Lobster"
           fontSize={{ base: "6xl", md: "7xl" }}
@@ -43,12 +43,8 @@ export const MainHeader = ({ setSelectedRecipe }) => {
         >
           Clean Plate
         </Heading>
-        <Text
-          display={{ base: "none", lg: "block" }}
-          fontSize={{ base: "sm", md: "md" }}
-          px={{ base: 2, md: 0 }}
-        >
-          Recipe inspiration for your next clean plate.
+        <Text fontSize="sm" pt={5} display={{ base: "none", lg: "flex" }}>
+          *Recipe inspiration for your next clean plate.
         </Text>
       </HStack>
     </Box>

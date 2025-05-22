@@ -44,32 +44,48 @@ export const RecipeItemCard = ({ recipe, setSelectedRecipe }) => {
           src={image}
           alt={label}
         />
-        <Heading size="md" mt={2}>
+        <Heading size="md" mt={2} mb={-6}>
           {label}
         </Heading>
       </CardHeader>
       <CardBody fontSize="sm">
         <Box mt={2}>
           <Text>
-            Meal: {mealType[0].charAt(0).toUpperCase() + mealType[0].slice(1)}
+            <strong>Meal:</strong>{" "}
+            {mealType[0].charAt(0).toUpperCase() + mealType[0].slice(1)}
           </Text>
           <Text>
-            Course: {dishType[0].charAt(0).toUpperCase() + dishType[0].slice(1)}
+            <strong>Course:</strong>{" "}
+            {dishType[0].charAt(0).toUpperCase() + dishType[0].slice(1)}
           </Text>
         </Box>
 
-        <Box mt={2}>
+        <Box mt={3}>
           <Box>
-            {dietLabels.map((label, index) => (
-              <Text key={index}>Diet: {label}</Text>
-            ))}
+            {dietLabels.length > 0 ? (
+              <>
+                <strong>Diet:</strong>
+                {dietLabels.map((label, index) => (
+                  <Text key={index}>{label}</Text>
+                ))}
+              </>
+            ) : (
+              ""
+            )}
           </Box>
         </Box>
-        <Box mt={2}>
+        <Box mt={3}>
           <Box>
-            {cautions.map((label, index) => (
-              <Text key={index}>Contains: {label}</Text>
-            ))}
+            {cautions.length > 0 ? (
+              <>
+                <strong>Contains:</strong>
+                {cautions.map((label, index) => (
+                  <Text key={index}> {label}</Text>
+                ))}
+              </>
+            ) : (
+              ""
+            )}
           </Box>
         </Box>
       </CardBody>

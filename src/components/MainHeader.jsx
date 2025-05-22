@@ -19,16 +19,16 @@ export const MainHeader = ({ setSelectedRecipe }) => {
         wrap="wrap"
       >
         <Link fontSize="xs">Contact us!</Link>
-        <Link>
+        <Link href="https://www.instagram.com/" target="blank">
           <Icon as={FaInstagram} boxSize={4} />
         </Link>
-        <Link>
+        <Link href="https://www.facebook.com/" target="blank">
           <Icon as={FaFacebook} boxSize={4} />
         </Link>
-        <Link>
+        <Link href="https://www.x.com/" target="blank">
           <Icon as={FaTwitter} boxSize={4} />
         </Link>
-        <Link>
+        <Link href="https://www.tiktok.com/" target="blank">
           <Icon as={FaTiktok} boxSize={4} />
         </Link>
       </HStack>

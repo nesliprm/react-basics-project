@@ -34,16 +34,16 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
       </Box>
 
       <Box
-        my={10}
+        my={{ base: 0, md: 10 }}
         mx={{ base: 4, sm: 10, md: 20, xl: 60 }}
-        border="dashed 1px"
-        borderColor={"blackAlpha.300"}
+        border={{ base: "none", md: "solid 1px" }}
+        borderColor={{ base: "white", md: "blackAlpha.100" }}
         borderRadius={30}
-        boxShadow="md"
+        boxShadow={{ base: "none", md: "md" }}
       >
         <Box
           display="flex"
-          flexDirection="row"
+          flexDirection={{ base: "column", md: "row" }}
           justifyContent="space-between"
           gap={10}
         >
@@ -72,11 +72,11 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
             maxW={{ base: "100%", md: "50%" }}
             maxH="600px"
             objectFit="cover"
-            borderTopRightRadius={30}
-            borderBottomLeftRadius={100}
+            borderTopRightRadius={{ base: 0, md: 30 }}
+            borderBottomLeftRadius={{ base: 0, md: 100 }}
           />
         </Box>
-        <Box className="ingredients" m={10}>
+        <Box className="ingredients" m={{ base: 5, md: 10 }}>
           <Text fontWeight={800} ml={3}>
             Ingredients
           </Text>
@@ -87,7 +87,13 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
           </UnorderedList>
         </Box>
 
-        <Box m={10} display="flex" flexDirection="row" gap={10}>
+        <Box
+          m={{ base: 5, md: 10 }}
+          display="flex"
+          flexDirection="row"
+          gap={10}
+          fontSize={{ base: "xs", md: "md" }}
+        >
           <Box className="nutrients">
             <Text>
               Energy: {Math.round(energy.quantity)} {energy.unit}
@@ -134,7 +140,7 @@ export const RecipeItemPage = ({ recipe, setSelectedRecipe }) => {
             )}
           </Box>
         </Box>
-        <Box className="tags" m={10}>
+        <Box className="tags" m={{ base: 5, md: 10 }}>
           {recipe.healthLabels.map((label, index) => (
             <Tag
               key={index}

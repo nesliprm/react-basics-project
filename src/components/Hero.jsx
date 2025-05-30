@@ -9,7 +9,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { MainHeader } from "./MainHeader";
 import heroImage from "../assets/hero-image-02-v2.png";
 
-export const Hero = ({ userInput, setUserInput }) => {
+export const Hero = ({ userInput, setUserInput, setSelectedRecipe }) => {
   return (
     <Box
       mb={10}
@@ -22,7 +22,7 @@ export const Hero = ({ userInput, setUserInput }) => {
       display="flex"
       flexDirection="column"
     >
-      <MainHeader />
+      <MainHeader setSelectedRecipe={setSelectedRecipe} />
       <Box
         display="flex"
         flexDir="column"

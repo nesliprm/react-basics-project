@@ -40,7 +40,7 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
           displayedRecipes.map((recipe) => (
             <RecipeItemCard
               recipe={recipe}
-              key={recipe.uri}
+              key={recipe.url}
               label={recipe.label}
               image={recipe.image}
               dietLabels={recipe.dietLabels}

@@ -26,7 +26,11 @@ export const RecipeListPage = ({ setSelectedRecipe }) => {
 
   return (
     <Box>
-      <Hero userInput={userInput} setUserInput={setUserInput} />
+      <Hero
+        userInput={userInput}
+        setUserInput={setUserInput}
+        setSelectedRecipe={setSelectedRecipe}
+      />
 
       <FilterTags filter={filter} setFilter={setFilter} />
 
